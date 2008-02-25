@@ -4,8 +4,7 @@ NAME = "fora"
 ##############################################################################
 # Git
 ##############################################################################
-namespace :repo do
-
+namespace :git do
   desc "Add all new modifications to repository, indiscriminately"
   task :add do
     system "git add *"
@@ -22,7 +21,7 @@ namespace :repo do
   end
   
   desc "push changes to the origin"
-  task :commit do
+  task :push do
     system "git commit; git push origin"
   end
 end
