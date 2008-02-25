@@ -4,6 +4,8 @@ fora
 [fora][1] (yes, it's all lowercase letters) is a self-hosted discussion forum
 software, done *differently*
 
+  [1]: <http://fora.yreality.net/> (fora homepage)
+
 philosophy
 ----------
 
@@ -15,10 +17,12 @@ passwords to log in, can edit anybody elses' posts, like a wiki - although
 versions are kept)
 * member trust built on self-sufficient ratings, not mere membership
 
-With fora, we hope to counter some of the basic anthropological
-problems associated with the limitations of normal 'discussion-board', or
-forum, software. Such limitations and the said problems are discussed in
-more depth [here][2]
+With fora, we hope to counter some of the basic anthropological problems
+associated with the limitations of normal 'discussion-board', or forum
+software. Such limitations and the said problems are discussed in more
+depth [here][2].
+
+  [2]: <http://wakaba.c3.cx/shii/shiichan> (Discussion and comparision of forum software, and 2ch-type software)
 
 Getting
 -------
@@ -28,12 +32,10 @@ following command:
 
 > `git clone git://github.com/elliottcable/fora.git`
 
-If you want to make changes or submit patches, you need to fork your own
-github repository for said changes. Send a [pullrequest][3] to
-[elliottcable][4] when you've got something
-ready for the master that you think should be integrated into the root source.
+If you want to make changes to the codebase, you need to fork your own github
+repository for said changes. Send a [pullrequest][3] to [elliottcable][4]
+when you've got something ready for the master that you think should be
+integrated into the root source.
 
-  [1]: <http://fora.yreality.net/> (fora homepage)
-  [2]: <http://wakaba.c3.cx/shii/shiichan> (Discussion and comparision of forum software, and 2ch-type software)
   [3]: <http://github.com/elliottcable/fora/pull_request/master> (Submit a pull request for the fora master branch)
   [4]: <http://github.com/elliottcable> (elliottcable's github account)
