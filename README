@@ -6,23 +6,24 @@ software, done *differently*
 
   [1]: <http://fora.yreality.net/> (fora homepage)
 
-philosophy
+Philosophy
 ----------
 
-* no categories, completely dynamic tags and master tags
-* no registration - every visitor is automatically assigned an account, and
+* No categories, completely dynamic tags and master tags
+* No registration - every visitor is automatically assigned an account, and
 they are automatically logged in to the correct account when visiting again
-* no community authentication - every user is assumed to be trustworthy (no
+* No community authentication - every user is assumed to be trustworthy (no
 passwords to log in, can edit anybody elses' posts, like a wiki - although
 versions are kept)
-* member trust built on self-sufficient ratings, not mere membership
+* Member trust built on self-sufficient ratings, not mere membership
 
 With fora, we hope to counter some of the basic anthropological problems
 associated with the limitations of normal 'discussion-board', or forum
 software. Such limitations and the said problems are discussed in more
 depth [here][2].
 
-  [2]: <http://wakaba.c3.cx/shii/shiichan> (Discussion and comparision of forum software, and 2ch-type software)
+  [2]: <http://wakaba.c3.cx/shii/shiichan> (Discussion and comparision
+of forum software, and 2ch-type software)
 
 Getting
 -------
@@ -38,16 +39,18 @@ repository for said changes. Send a [pullrequest][3] to [elliottcable][4]
 when you've got something ready for the master that you think should be
 integrated into the root source.
 
-  [3]: <http://github.com/elliottcable/fora/pull_request/master> (Submit a pull request for the fora master branch)
+  [3]: <http://github.com/elliottcable/fora/pull_request/master> (Submit
+a pull request for the fora master branch)
   [4]: <http://github.com/elliottcable> (elliottcable's github account)
 
 Requirements
 ------------
 
-To run a fora, you need the following gems:
+To run fora, you need the following gems:
 
 * merb-core
 * merb-more
+* merb-rspec (from merb-plugins)
 * sequel
 
 To develop and contribute to fora, you also need:
