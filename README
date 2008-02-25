@@ -48,7 +48,7 @@ To run a fora, you need the following gems:
 
 * merb-core
 * merb-more
-* sequel and / or sqlite3-ruby
+* sequel
 
 To develop and contribute to fora, you also need:
 
