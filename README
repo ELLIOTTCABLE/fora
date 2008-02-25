@@ -26,6 +26,7 @@ depth [here][2].
 
 Getting
 -------
+
 The authoratative source for this project is available at
 <http://github.com/elliottcable/fora>. You can clone your own copy with the
 following command:
@@ -39,3 +40,17 @@ integrated into the root source.
 
   [3]: <http://github.com/elliottcable/fora/pull_request/master> (Submit a pull request for the fora master branch)
   [4]: <http://github.com/elliottcable> (elliottcable's github account)
+
+Requirements
+------------
+
+To run a fora, you need the following gems:
+
+* merb-core
+* merb-more
+* sequel and / or sqlite3-ruby
+
+To develop and contribute to fora, you also need:
+
+* rspec
+* rake
