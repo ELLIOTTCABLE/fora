@@ -1,15 +1,17 @@
+#!/usr/bin/ruby
+
 require 'database'
 
 describe Connection do
 	before(:each) do
 		@init = Connection.new
 	end
-
+		
 		it "should be assigned ident" do
 			@init.assign_ident("assigned ident")
 			@init.should be_in_ident("assigned ident")
 		end
-	
+
 		it "should NOT be assigned ident" do
 			@init = Connection.new
 			@init.should_not be_in_ident("assigned ident")

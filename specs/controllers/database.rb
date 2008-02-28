@@ -1,3 +1,5 @@
+#!/usr/bin/ruby
+
 require 'activerecord'
 
 class Connection
@@ -24,7 +26,7 @@ class Database
 			":username => 'yreality'",
 			":password => 'yreality'",
 			":host => 'localhost'"
-	        	}
+			}
 		ActiveRecord::Base.configurations['development'] = {
 			:database => 'specs_test',
 			:adapter  => db_config[:adapter],
