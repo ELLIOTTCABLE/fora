@@ -1,3 +1,3 @@
-*.log
 *.pid
-*.css
+public/stylesheets/*.css
+config/database.yml

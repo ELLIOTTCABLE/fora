@@ -50,10 +50,11 @@ To run fora, you need the following gems:
 
 * merb-core
 * merb-more
-* merb-rspec (from merb-plugins)
-* sequel
+* datamapper (and associated do_postgres, do_mysql, etc)
+* merb_datamapper (from merb-plugins)
 
 To develop and contribute to fora, you also need:
 
+* merb_rspec (from merb-plugins)
 * rspec
 * rake
