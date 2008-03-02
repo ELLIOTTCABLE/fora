@@ -50,5 +50,47 @@ unless Gem.cache.search("haml").empty?
       Sass::Plugin.update_stylesheets
       puts "*** Done"      
     end
+    
+    desc "Move gen'd .erb files to .haml"
+    task :mvgend do
+      require 'fileutils'
+      
+      print 'gitillate? '
+      gitillate = STDIN.gets.match /^y(es)?$/
+      
+      affirm = Proc.new { |what|
+        puts what
+        print 'move? '
+        affirmation = STDIN.gets
+      }
+      
+      Dir['**/*'].each do |filename|
+        if filename.match /\.erb$/
+          affirmation = affirm.call(filename).match /^y(es)?$/
+          if affirmation
+            new_filename = filename.gsub(/\.erb$/, '.haml')
+            FileUtils.cp(filename, new_filename)
+            if gitillate
+              if system "git rm './#{filename}'"
+                system "git add './#{new_filename}'"
+              end
+            end
+          end
+        end
+        
+        if filename.match /\.erb_spec\./
+          affirmation = affirm.call(filename).match /^y(es)?$/
+          if affirmation
+            new_filename = filename.gsub(/\.erb_spec\./, '.haml_spec.')
+            FileUtils.cp(filename, new_filename)
+            if gitillate
+              if system "git rm './#{filename}'"
+                system "git add './#{new_filename}'"
+              end
+            end
+          end
+        end
+      end
+    end
   end
 end
