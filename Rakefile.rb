@@ -30,11 +30,20 @@ task :uninstall => [:clean] do
   sh %{sudo gem uninstall #{NAME}}
 end
 
-desc 'Run all tests, specs and finish with rcov'
-task :aok do
-  sh %{rake rcov}
-  sh %{rake spec}
+task :migrate do
+  DataMapper::Persistence.auto_migrate!
 end
+task :run_specs do
+  dirs = []
+  Dir['app/*'].each do |dir|
+    dirs << Dir['spec/' + dir.gsub(%r|^app/|,'') + '/**/*']
+  end
+  files = dirs.flatten.map{|d|"\"#{d}\""}.join(' ')
+  system 'spec --format specdoc --colour ' + files
+end
+
+desc 'Migrate, then run specs'
+task :aok => [:migrate, :run_specs]
 
 unless Gem.cache.search("haml").empty?
   namespace :haml do
