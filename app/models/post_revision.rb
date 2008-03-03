@@ -1,8 +1,17 @@
 class PostRevision < DataMapper::Base
-  property :content, :text
+  property :content, :text, :lazy => false
   property :created_at, :datetime
   
   belongs_to :post
   
-  def post; post.title; end
+  def content=(content)
+    if new_record?
+      @content = content
+    else
+      r = self.class.new(:content => content)
+      post.revisions << r
+    end
+  end
+  
+  def title; post.title; end
 end

@@ -6,13 +6,22 @@ describe Post do
     @post.save
   end
   
+  it "should have a title" do
+    @post.title = 'Yay!'
+    @post.title.should == 'Yay!'
+  end
+  it "should have content" do
+    @post.content = 'Hi, my name is George.'
+    @post.content.should == 'Hi, my name is George.'
+  end
+  
   it "should have at least one revision" do
     @post.revisions.size.should >= 1
   end
-
   it "should proxy to last revision for content" do
-    last_revision = @post.revisions.last
-    @post.content.should eql(last_revision.content)
+    @post.content.should eql(@post.revisions.last.content)
+    @post.content = 'something else'
+    @post.content.should eql(@post.revisions.last.content)
   end
-
+  
 end
