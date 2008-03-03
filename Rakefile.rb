@@ -31,7 +31,9 @@ task :uninstall => [:clean] do
 end
 
 task :migrate do
+  $TESTING = true
   DataMapper::Persistence.auto_migrate!
+  puts 'Test database migrated'
 end
 task :run_specs do
   dirs = []
