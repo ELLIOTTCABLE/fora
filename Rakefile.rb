@@ -20,10 +20,6 @@ include FileUtils
 # # # Get Merb plugins and dependencies
 Merb::Plugins.rakefiles.each {|r| require r } 
 
-# 
-#desc "Packages up Merb."
-#task :default => [:package]
-
 desc "load merb_init.rb"
 task :merb_init do
   require 'merb-core'
@@ -52,7 +48,7 @@ unless Gem.cache.search("haml").empty?
     end
     
     desc "Move gen'd .erb files to .haml"
-    task :mvgend do
+    task :erb2haml do
       require 'fileutils'
       
       print 'gitillate? '
@@ -73,10 +69,10 @@ unless Gem.cache.search("haml").empty?
             if gitillate
               if system "git rm './#{filename}'"
                 system "git add './#{new_filename}'"
-              end
-            end
-          end
-        end
+              end # if system git rm
+            end # if gitillate
+          end # if affirmation
+        end # filename .erb
         
         if filename.match /\.erb_spec\./
           affirmation = affirm.call(filename).match /^y(es)?$/
@@ -86,11 +82,11 @@ unless Gem.cache.search("haml").empty?
             if gitillate
               if system "git rm './#{filename}'"
                 system "git add './#{new_filename}'"
-              end
-            end
-          end
-        end
-      end
-    end
-  end
-end
+              end # if system git rm
+            end # if gitillate
+          end # if affirmation
+        end # filename .erb_spec.
+      end # Dir each
+    end # task :erb2haml
+  end # namespace :haml
+end # unless gem cache
