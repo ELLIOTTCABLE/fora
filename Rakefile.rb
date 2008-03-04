@@ -30,7 +30,12 @@ task :uninstall => [:clean] do
   sh %{sudo gem uninstall #{NAME}}
 end
 
-# You'll want to set MERB_ENV="production|development|test" with this
+# =====================================================
+# = This whole section is really gerryrigged. FIXME!: =
+# =====================================================
+
+# You'll want to set DB=p|d|t etc with this:
+#   rake migrate DB=t
 task :migrate do
   env = case ENV['DB']
   when 'p'
@@ -40,6 +45,8 @@ task :migrate do
   else
     'development'
   end
+  
+  puts "Migrating #{env}."
   
   system "rake dm:db:automigrate MERB_ENV=\"#{env}\" &>/dev/null" # System'ing it, to silence it.
 end
@@ -57,6 +64,10 @@ end
 
 desc 'Migrate, then run specs'
 task :aok => [:migrate_test, :run_specs]
+
+# =======================================================
+# = This is pretty bad too, but not AS bad. FIXME ALSO: =
+# =======================================================
 
 unless Gem.cache.search("haml").empty?
   namespace :haml do
