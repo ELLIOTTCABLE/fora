@@ -9,7 +9,7 @@ software, done *differently*
 Philosophy
 ----------
 
-* No categories, completely dynamic tags and master tags
+* No categories, completely dynamic via tags and tag sets instead of topics
 * No registration - every visitor is automatically assigned an account, and
 they are automatically logged in to the correct account when visiting again
 * No community authentication - every user is assumed to be trustworthy (no
@@ -23,7 +23,7 @@ software. Such limitations and the said problems are discussed in more
 depth [here][2].
 
   [2]: <http://wakaba.c3.cx/shii/shiichan> (Discussion and comparision
-of forum software, and 2ch-type software)
+of forum software vs. 2ch-type software)
 
 Getting
 -------
@@ -35,13 +35,11 @@ following command:
 > `git clone git://github.com/elliottcable/fora.git`
 
 If you want to make changes to the codebase, you need to fork your own github
-repository for said changes. Send a [pullrequest][3] to [elliottcable][4]
+repository for said changes. Send a pullrequest to [elliottcable][3]
 when you've got something ready for the master that you think should be
 integrated into the root source.
 
-  [3]: <http://github.com/elliottcable/fora/pull_request/master> (Submit
-a pull request for the fora master branch)
-  [4]: <http://github.com/elliottcable> (elliottcable's github account)
+  [3]: <http://github.com/elliottcable> (elliottcable's github account)
 
 Requirements
 ------------
@@ -49,7 +47,7 @@ Requirements
 To run fora, you need the following gems:
 
 * merb-core
-* merb-more
+* merb-more (may not be necessary)
 * datamapper (and associated do_postgres, do_mysql, etc)
 * merb_datamapper (from merb-plugins)
 
