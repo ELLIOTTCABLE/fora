@@ -30,14 +30,21 @@ task :uninstall => [:clean] do
   sh %{sudo gem uninstall #{NAME}}
 end
 
+# You'll want to set MERB_ENV="production|development|test" with this
 task :migrate do
-  system 'rake dm:db:automigrate MERB_ENV="production" &>/dev/null' # System'ing it, to silence it.
-end
-task :migrate_dev do
-  system 'rake dm:db:automigrate MERB_ENV="development" &>/dev/null' # System'ing it, to silence it.
+  env = case ENV['DB']
+  when 'p'
+    'production'
+  when 't'
+    'test'
+  else
+    'development'
+  end
+  
+  system "rake dm:db:automigrate MERB_ENV=\"#{env}\" &>/dev/null" # System'ing it, to silence it.
 end
 task :migrate_test do
-  system 'rake dm:db:automigrate MERB_ENV="test" &>/dev/null' # System'ing it, to silence it.
+  system 'rake dm:db:automigrate MERB_ENV="test" &>/dev/null'
 end
 task :run_specs do
   dirs = []
