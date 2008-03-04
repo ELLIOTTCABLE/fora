@@ -37,7 +37,7 @@ task :migrate_dev do
   system 'rake dm:db:automigrate MERB_ENV="development" &>/dev/null' # System'ing it, to silence it.
 end
 task :migrate_test do
-  system 'rake dm:db:automigrate MERB_ENV="testing" &>/dev/null' # System'ing it, to silence it.
+  system 'rake dm:db:automigrate MERB_ENV="test" &>/dev/null' # System'ing it, to silence it.
 end
 task :run_specs do
   dirs = []
@@ -49,7 +49,7 @@ task :run_specs do
 end
 
 desc 'Migrate, then run specs'
-task :aok => [:migrate, :run_specs]
+task :aok => [:migrate_test, :run_specs]
 
 unless Gem.cache.search("haml").empty?
   namespace :haml do
