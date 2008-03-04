@@ -31,9 +31,13 @@ task :uninstall => [:clean] do
 end
 
 task :migrate do
-  $TESTING = true
-  DataMapper::Persistence.auto_migrate!
-  puts 'Test database migrated'
+  system 'rake dm:db:automigrate MERB_ENV="production" &>/dev/null' # System'ing it, to silence it.
+end
+task :migrate_dev do
+  system 'rake dm:db:automigrate MERB_ENV="development" &>/dev/null' # System'ing it, to silence it.
+end
+task :migrate_test do
+  system 'rake dm:db:automigrate MERB_ENV="testing" &>/dev/null' # System'ing it, to silence it.
 end
 task :run_specs do
   dirs = []
