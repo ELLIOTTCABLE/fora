@@ -1,6 +1,26 @@
 require File.join( File.dirname(__FILE__), "..", "spec_helper" )
 
+shared_examples_for 'a taggable post' do
+  before(:each) do
+    @post = Post.new
+  end
+  it "should be taggable" do
+    @post.tag 'tag1 tag2 "tag phrase"'
+    @post.save
+    @post.tags.entries.should == Tag.parse('tag1 tag2 "tag phrase"')
+  end
+  
+  it "should be filterable by tag" do
+    some_tags = ['something', 'something else', 'a third something']
+    @post.tag some_tags
+    @post.save
+    Post.all_by_tags some_tags
+  end
+end
+
 describe Post do
+  it_should_behave_like 'a taggable post'
+  
   before(:each) do
     @post = Post.new
     @post.save

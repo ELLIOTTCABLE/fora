@@ -32,14 +32,9 @@ shared_examples_for 'a revision with auto-proxied content' do
   end
 end
 
-shared_examples_for 'a taggable revision' do
-  it "should be taggable"
-end
-
 describe PostRevision do
   it_should_behave_like 'a lonely revision'
   it_should_behave_like 'a revision with auto-proxied content'
-  it_should_behave_like 'a taggable revision'
   
   # TODO: Clean this spec up, it's confusing
   it "should save with the post" do
