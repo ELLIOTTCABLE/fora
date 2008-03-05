@@ -6,7 +6,6 @@ require 'merb-core'
 Merb.start :environment => (ENV['MERB_ENV'] || 'test'),
            :merb_root  => File.join(File.dirname(__FILE__), ".." )
 
-
 Spec::Runner.configure do |config|
   config.include(Merb::Test::ViewHelper)
   config.include(Merb::Test::RouteHelper)
