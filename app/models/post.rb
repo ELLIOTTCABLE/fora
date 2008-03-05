@@ -16,8 +16,9 @@ class Post < DataMapper::Base
   # Alias up some more sensible revisions
   alias :revisions :post_revisions; alias :revisions= :post_revisions=
   
-  def initialize(*args); super
+  def initialize(*args)
     revisions << self.class.revision.new
+    super
   end
   
   def content=(content); revisions.last.content=(content); end

@@ -41,6 +41,8 @@ use_orm :datamapper
 # use_test :test_unit
 use_test :rspec
 
+Merb.logger.auto_flush = true
+
 ### Add your other dependencies here
 
 # These are some examples of how you might specify dependencies.
@@ -52,6 +54,8 @@ use_test :rspec
 # dependencies "RedCloth" => "> 3.0", "ruby-aes-cext" => "= 1.0"
 dependencies 'datamapper'
 
+dependency 'merb-action-args'
+dependency 'merb_helpers'
 
 Merb::BootLoader.after_app_loads do
   ### Add dependencies here that must load after the application loads:
