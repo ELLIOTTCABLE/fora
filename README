@@ -2,9 +2,11 @@ fora
 ====
 
 [fora][1] (yes, it's all lowercase letters) is discussion forum software,
-done *differently*.
+done *differently*. If you'd like to discuss fora, make suggestions, or ask
+questions, you can do so at [our getsatisfaction forum][2].
 
   [1]: <http://fora.yreality.net/> (fora homepage)
+  [2]: <http://getsatisfaction.com/elliottcable/products/elliottcable_fora>
 
 Philosophy
 ----------
@@ -20,9 +22,9 @@ versions are kept)
 With fora, we hope to counter some of the basic anthropological problems
 associated with the limitations of normal 'discussion-board', or forum
 software. Such limitations and the said problems are discussed in more
-depth [here][2].
+depth [here][3].
 
-  [2]: <http://wakaba.c3.cx/shii/shiichan> (Discussion and comparision
+  [3]: <http://wakaba.c3.cx/shii/shiichan> (Discussion and comparision
 of forum software vs. 2ch-type software)
 
 Getting
@@ -35,11 +37,11 @@ following command:
 > `git clone git://github.com/elliottcable/fora.git`
 
 If you want to make changes to the codebase, you need to fork your own github
-repository for said changes. Send a pullrequest to [elliottcable][3]
+repository for said changes. Send a pullrequest to [elliottcable][4]
 when you've got something ready for the master that you think should be
 integrated into the root source.
 
-  [3]: <http://github.com/elliottcable> (elliottcable's github account)
+  [4]: <http://github.com/elliottcable> (elliottcable's github account)
 
 Requirements
 ------------
