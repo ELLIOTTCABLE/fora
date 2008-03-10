@@ -52,10 +52,7 @@ Merb.logger.auto_flush = true
 # dependency "RedCloth", "> 3.0"
 # OR
 # dependencies "RedCloth" => "> 3.0", "ruby-aes-cext" => "= 1.0"
-dependencies 'datamapper'
-
-dependency 'merb-action-args'
-dependency 'merb_helpers'
+dependencies 'merb-action-args', 'merb_helpers'
 
 Merb::BootLoader.after_app_loads do
   ### Add dependencies here that must load after the application loads:
