@@ -24,8 +24,7 @@ associated with the limitations of normal 'discussion-board', or forum
 software. Such limitations and the said problems are discussed in more
 depth [here][3].
 
-  [3]: <http://wakaba.c3.cx/shii/shiichan> (Discussion and comparision
-of forum software vs. 2ch-type software)
+  [3]: <http://wakaba.c3.cx/shii/shiichan> (Discussion and comparision of forum software vs. 2ch-type software)
 
 Getting
 -------
