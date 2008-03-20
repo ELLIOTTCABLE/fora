@@ -1,0 +1,5 @@
+%h1 topics
+%ul#topics
+  - @topics.each do |tag, freq|
+    %li{ :class => "topic freq#{freq}" }
+      %a{ :href => "/topic/#{tag}"}= tag

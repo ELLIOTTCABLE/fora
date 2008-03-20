@@ -1,0 +1,97 @@
+html
+  :width inherit
+  :height inherit
+  :padding 1em
+  :border
+    :top 5px solid black
+    :bottom 5px solid black
+
+body
+  :width 40em
+
+abbr
+  :display inline-block
+  :text-transform lowercase
+  :font-variant small-caps
+  
+  &:first-letter
+    :text-transform uppercase
+  
+
+// Topic / tag 'un-cloud'
+ul#topics
+  :list-style-type none
+  
+  .topic
+    :display inline
+    :font 14pt/1.6 sans-serif
+
+    &.freq1
+      :font-size 74%
+    
+    &.freq2
+      :font-size 87%
+    
+    &.freq3
+      :font-size 100%
+    
+    &.freq4
+      :font-size 113%
+    
+    &.freq5
+      :font-size 126%
+    
+    &.freq6
+      :font-size 139%
+    
+    &.freq7
+      :font-size 152%
+    
+    &.freq8
+      :font-size 165%
+    
+    &.freq9
+      :font-size 178%
+    
+    &.freq10
+      :font-size 191%
+    
+    &.freq11
+      :font-size 204%
+    
+    &.freq12
+      :font-size 217%
+    
+    &.freq13
+      :font-size 230%
+    
+    &.freq14
+      :font-size 243%
+    
+    &.freq15
+      :font-size 256%
+
+
+// Posts
+.posts
+  .replies
+    :margin
+      :left 1em
+
+.reply > .content
+  /*
+    :display none
+
+.reply:hover > .content
+  /* :background #F0F0F0
+
+.reply:hover + .replies > .reply > .content
+  /*
+    :display block
+
+.replies > .reply:hover + .replies > .reply > .content
+  /*
+    :display block
+
+.reply:hover + *
+  :background #000000

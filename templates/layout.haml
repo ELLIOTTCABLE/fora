@@ -1,0 +1,23 @@
+!!! xml
+!!! 1.1
+%html{ :xmlns => 'http://www.w3.org/1999/xhtml', :'xml:lang' => :en }
+  %head
+    %meta{ :'http-equiv' => 'Content-Type', :content => 'application/xhtml+xml;charset=utf-8'}/
+    %title elliottcable
+    %link{ :rel => 'copyright', :href => 'http://creativecommons.org/licenses/by-nc-sa/3.0/', :type =>'text/html;charset=utf-8' }/
+    %link{ :rel => 'stylesheet', :href => '/style/elliottcable', :type => 'text/css;charset=utf-8' }/
+    %link{ :rel => 'stylesheet', :href => '/style/main', :type => 'text/css;charset=utf-8' }/
+    %style{ :type => 'text/css;charset=utf-8' }
+      :plain
+        <![CDATA[
+      :sass
+        /* SASS go where?
+      :plain
+        ]]>
+    %script{ :type => 'text/javascript', :charset => 'utf-8' }
+      :plain
+        <![CDATA[
+          // Javascript go where?
+        ]]>
+  %body
+    = @content

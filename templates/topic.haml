@@ -1,0 +1,32 @@
+%h1= @topic
+%div.posts
+  - @posts.each do |post|
+    %div.post
+      %div.content= post.content
+      %cite
+        %a{:href => "/author/#{post.author}"}= post.author
+      %span.tags= post.tags.split("\n").map {|tag| tag.gsub(/^/,'&ldquo;').gsub(/$/,'&rdquo;') if tag.match(/[^A-Za-z0-9\-_.]/); tag}.join(', ')
+    - unless (replies = Post.all.reject{|p| p.post_id != post.id}) == nil
+      %div.replies
+        - replies.each do |post|
+          %div.post.reply.l1
+            %div.content= post.content
+            %cite
+              %a{:href => "/author/#{post.author}"}= post.author
+            %span.tags= post.tags.split("\n").map {|tag| tag.gsub(/^/,'&ldquo;').gsub(/$/,'&rdquo;') if tag.match(/[^A-Za-z0-9\-_.]/); tag}.join(', ')
+          - unless (replies = Post.all.reject{|p| p.post_id != post.id}) == nil
+            %div.replies
+              - replies.each do |post|
+                %div.post.reply.l2
+                  %div.content= post.content
+                  %cite
+                    %a{:href => "/author/#{post.author}"}= post.author
+                  %span.tags= post.tags.split("\n").map {|tag| tag.gsub(/^/,'&ldquo;').gsub(/$/,'&rdquo;') if tag.match(/[^A-Za-z0-9\-_.]/); tag}.join(', ')
+                - unless (replies = Post.all.reject{|p| p.post_id != post.id}) == nil
+                  %div.replies
+                    - replies.each do |post|
+                      %div.post.reply.l3
+                        %div.content= post.content
+                        %cite
+                          %a{:href => "/author/#{post.author}"}= post.author
+                        %span.tags= post.tags.split("\n").map {|tag| tag.gsub(/^/,'&ldquo;').gsub(/$/,'&rdquo;') if tag.match(/[^A-Za-z0-9\-_.]/); tag}.join(', ')

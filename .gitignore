@@ -1,5 +1,1 @@
-*.pid
-log/*.log
-public/stylesheets/*.css
-config/database.yml
-coverage/*
+mock.db

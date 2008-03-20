@@ -1,0 +1,356 @@
+/* ==== Browser un-sets (includes/unsets.sass) ====
+// Created by elliottcable elliottcable.name
+// Licensed as Creative Commons BY-NC-SA 3.0 (creativecommons.org/licenses/by-nc-sa/3.0)
+// -------------------------------------
+// This file 'unsets' common browser HTML to absolute basics
+html, html *, a, abbr, acronym, address, area, b, bdo, big, blockquote, body, br, button, caption, cite, code, col, colgroup, dd, del, dfn, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, head, hr, i, img, input, ins, kbd, label, legend, li, listing, map, noscript, object, ol, optgroup, option, p, param, plaintext, pre, q, rb, rbc, rp, rt, rtc, ruby, samp, select, small, span, strong, sub, sup, table, tbody, td, textarea, tfoot, th, thead, tr, tt, ul, var, xmp
+  margin: 0
+  padding: 0
+  / background-color: inherit
+  / border: inherit
+  / font:
+  /   family: inherit
+  /   style: inherit
+  /   weight: inherit
+  /   size: inherit
+  / text:
+  /   align: inherit
+  /   decoration: inherit
+  / color: inherit
+  / white-space: inherit
+
+table
+  border:
+    collapse: collapse
+    spacing: 0
+
+fieldset, img, input, textarea, button
+  border: 0
+  background-color: transparent
+
+// b, i, pre, address, caption, cite, code, dfn, em, strong, th, var, tt, kbd, samp, xmp, plaintext, listing, form, fieldset, legend, input, button, textarea
+//   font:
+//     family: normal
+//     style: normal
+//     weight: normal
+//   white-space: normal
+
+a
+  color: #000000
+  text-decoration: none
+  &:visited
+    color: #000000
+    text-decoration: none
+  &:hover
+    color: #000000
+    text-decoration: none
+
+ol, ul 
+  list-style: none
+li
+  display: inline
+
+caption, th 
+  text-align: left
+
+h1, h2, h3, h4, h5, h6
+  font:
+    size: 100%
+    weight: normal
+
+q:before, q:after
+  content: ''
+
+abbr, acronym
+  border: 0
+
+del, ins
+  text-decoration: none
+
+marquee
+  // Webkit-specific, to disable
+  overflow-x: inherit
+  overflow-y: inherit
+  // Supposedly mozilla specific, to disable, need to test this
+  -moz-binding: none
+  overflow: auto
+  display: block
+
+blink
+  text-decoration: none
+
+// Ensure proper 'bdo' operation
+bdo
+  direction: ltr
+bdo[dir='rtl']
+  direction: rtl
+
+sub, sup
+  line-height: 000000
+
+/* ==== Browser re-sets (includes/resets.sass) ====
+// Created by elliottcable: elliottcable.name
+// Licensed as Creative Commons BY-NC-SA 3.0 (creativecommons.org/licenses/by-nc-sa/3.0)
+// -------------------------------------
+// Fixing things broken by the browser unsets
+html, body
+  width: 100%
+  height: 100%
+
+strong
+  font-weight: bold
+em
+  font:
+    style: italic
+    weight: bolder
+b
+  font-weight: bolder
+i
+  font-style: italic
+
+h1, h2, h3, h4, h5, h6
+  font-weight: bold
+h1
+  font-size: 250%
+h2
+  font-size: 200%
+h3
+  font-size: 140%
+h4
+  font-size: 115%
+h5
+  font-size: 95%
+h6
+  font-size: 85%
+
+// Applies only to the first occurrence of the abbreviation in every section, if markup is correct
+abbr[title], acronym[title]
+  border-bottom: 1px dotted #000000
+  cursor: default
+
+abbr, acronym
+  cursor: default
+
+// For our purposes, an abbreviation is something you say - FUBAR (said foo bar), GIF (said geiff)...
+abbr
+  speak: normal
+// Whereas an acronym is something you spell out - HTML (said aeych tee em el), CSS (said See Ess Ess)
+acronym
+  speak: spell-out
+  
+ul
+  display: block
+  list-style:
+    type: circle
+    position: inside
+ol
+  display: block
+  list-style:
+    type: decimal
+    position: inside
+li
+  display: list-item
+
+a
+  color: #0000EE
+  &:visited
+    color: #551A8B
+  &:hover
+    color: #551A8B
+    text-decoration: underline
+
+// blockquote
+blockquote + cite
+  font:
+    weight: bold
+    style: italic
+  border-bottom: 1px dotted #555555
+  
+q:before
+  content: "\201C"
+q:after
+  content: "\201D"
+
+del
+  display: none
+ins
+  font-style: italic
+
+pre, code, samp, kbd, var
+  white-space: pre
+code, samp, kbd, var
+  font-family: monospace
+samp, kbd, var
+  font:
+    weight: inherit
+    style: inherit
+kbd
+  font-weight: bold
+var 
+  font-style: italic
+
+legend  
+  
+p 
+  padding: 0.25em
+    left: 0
+    right: 0
+
+table
+  td, th
+    padding: 3px
+  th, thead, tfoot
+    font-weight: bold
+  thead, tfoot
+    text-align: center
+  tr
+    border:
+      top: 1px solid #555555
+  thead, tfoot
+    tr
+      border:
+        top: 0px solid transparent
+
+// Created by elliottcable: elliottcable.name
+// Part of the yStyle SASS/CSS pack: find.yreality.net/yStyle
+// Licensed as Creative Commons BY-NC-SA 3.0
+// -  (creativecommons.org/licenses/by-nc-sa/3.0)
+// -------------------------------------
+// General yStyling
+/* ==== General (yStyle/general.sass) ====
+
+// STOP! COLORTIME.
+!Text = #000000
+!Background = #FFFFFF
+!Border = #888888
+
+// Let's do some Math, kids!
+
+// Delta computation will change based on whether the foreground color is
+//   light and the background is dark, or vice versa. First line here is
+//   for dark Text on light ContentBackground, second is for light on dark.
+!Delta = !Background - !Text
+// !Delta = !Text - !ContentBackground
+
+!Mod = 0.30 * !Delta
+!SMod = 0.10 * !Delta
+
+// Now, these probably don't need adjusting... Why don't you toddy on back up?
+!TextDim = !Text + !Mod
+!TextVeryDim = !Text + (2 * !Mod)
+!TextBright = !Text - !Mod
+!TextVeryBright = !Text - (2 * !Mod)
+
+// Back to your regularly scheduled SASS.
+html
+  color = !Text
+  background-color = !Background
+  
+  font-size: 1em
+  line-height: 1.3
+  
+div#content
+  margin:
+    left: 4px
+    right: 4px
+
+// Created by elliottcable: elliottcable.name
+// Part of the yStyle SASS/CSS pack: find.yreality.net/yStyle
+// Licensed as Creative Commons BY-NC-SA 3.0
+// -  (creativecommons.org/licenses/by-nc-sa/3.0)
+// -------------------------------------
+// yStyling for tables
+/* ==== Tables (yStyle/tables.sass) ====
+table
+  line-height: 1.0
+  
+  thead
+    tr
+      border:
+        bottom: 1px solid #999999
+  tfoot
+    tr
+      border:
+        top: 1px solid #999999
+  
+  tr
+    border: 0px solid transparent
+  
+  &.switch
+    tbody
+      // Alternating row colors
+      tr.even
+        // Leave as is
+      tr.odd
+        background:
+          color = !Background - !SMod
+
+// Created by elliottcable: elliottcable.name
+// Part of the yStyle SASS/CSS pack: find.yreality.net/yStyle
+// Licensed as Creative Commons BY-NC-SA 3.0
+// -  (creativecommons.org/licenses/by-nc-sa/3.0)
+// -------------------------------------
+// yStyling for forms
+/* ==== Forms (yStyle/forms.sass) ====
+form
+  button, input[type="button"], input[type="submit"]  
+    border:
+      width: 3px
+      style: double
+      color: #999999
+      top:
+        color: #CCCCCC
+      left:
+        color: #CCCCCC
+    padding: 0.50em
+      top: 0
+      bottom: 0
+    background:
+      color: #FFFFFF
+      image: url('http://www.macromedia.com/images/master/background_form_element.gif')
+      repeat: repeat-x
+    color: #333333
+    font:
+      size: 75%
+      family: Verdana, Helvetica, Arial, sans-serif
+  
+    &:active
+      border:
+        width: 3px
+        style: double
+        color: #CCCCCC
+        top:
+          color: #999999
+        left:
+          color: #999999
+  
+  textarea
+    display: block
+  
+  input, textarea
+    font-family: monospace
+    border:
+      width: 1px
+      style: solid
+      color = !Border
+  
+  label
+    &:after
+      content: ":"
+
+// Created by elliottcable: elliottcable.name
+// Part of the yStyle SASS/CSS pack: find.yreality.net/yStyle
+// Licensed as Creative Commons BY-NC-SA 3.0
+// -  (creativecommons.org/licenses/by-nc-sa/3.0)
+// -------------------------------------
+// Typography for content text
+/* ==== Text & Typography (yStyle/text.sass) ====
+p
+  padding-left: 2em
+  
+  &:first-letter
+    margin-left: -2em
+  
+  &:first-child, h1 + &, h2 + &, h3 + &, h4 + &, h5 + &, h6 + &, hr + &
+    &:first-letter
+      margin-left: 0
