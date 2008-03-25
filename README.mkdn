@@ -33,7 +33,7 @@ The authoratative source for this project is available at
 <http://github.com/elliottcable/fora>. You can clone your own copy with the
 following command:
 
-> `git clone git://github.com/elliottcable/fora.git`
+    git clone git://github.com/elliottcable/fora.git
 
 If you want to make changes to the codebase, you need to fork your own github
 repository for said changes. Send a pullrequest to [elliottcable][4]
@@ -57,3 +57,16 @@ To develop and contribute to fora, you also need:
 * merb_rspec (from merb-plugins)
 * rspec
 * rake
+
+merb edge
+---------
+
+To easily install the current edge merbs, first install the merb-dev rakefile with sake as follows:
+
+    sudo gem install sake
+    {mkdir -p,cd} ~/.ruby
+    sake -i http://github.com/ivey/merb-dev/tree/master/merb-dev.rake?raw=true
+    sake merb:clone
+    cd ~/.ruby/merb
+    sudo sake merb:gems:wipe
+    sudo sake merb:install merb:install:plugins
