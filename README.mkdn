@@ -64,7 +64,7 @@ merb edge
 To easily install the current edge merbs, first install the merb-dev rakefile with sake as follows:
 
     sudo gem install sake
-    {mkdir -p,cd} ~/.ruby
+    mkdir -p ~/.ruby; cd ~/.ruby
     sake -i http://github.com/ivey/merb-dev/tree/master/merb-dev.rake?raw=true
     sake merb:clone
     cd ~/.ruby/merb
