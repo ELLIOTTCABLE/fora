@@ -1,12 +1,17 @@
 fora
 ====
 
-[fora][1] (yes, it's all lowercase letters) is discussion forum software,
-done *differently*. If you'd like to discuss fora, make suggestions, or ask
-questions, you can do so at [our getsatisfaction forum][2].
+[fora][1] (yes, it's all lowercase letters) is forum / discussion board
+software, done *differently*. If you'd like to discuss fora, make suggestions,
+or ask questions, you can do so in [our campfire room][2].
+
+**Note:** this project is currently non-operational, and is still in early
+development. Feel free to watch it here on GitHub, fork it and contribute
+yourself, or jump in the room and chat with us... but you can't download and
+install fora in it's current state.
 
   [1]: <http://fora.yreality.net/> (fora homepage)
-  [2]: <http://getsatisfaction.com/elliottcable/products/elliottcable_fora>
+  [2]: <http://elliottcable.campfirenow.com/10c4b> (fora campfire room)
 
 Philosophy
 ----------
@@ -39,8 +44,11 @@ If you want to make changes to the codebase, you need to fork your own github
 repository for said changes. Send a pullrequest to [elliottcable][4]
 when you've got something ready for the master that you think should be
 integrated into the root source.
+ 
+Bugs or feature requests can be submitted to our [ticketing system][5].
 
   [4]: <http://github.com/elliottcable> (elliottcable's github account)
+  [5]: <http://elliottcable.lighthouseapp.com/projects/9425-fora/overview> (fora on Lighthouse)
 
 Requirements
 ------------
