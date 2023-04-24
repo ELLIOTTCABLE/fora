@@ -1,4 +1,4 @@
-class Tag < DataMapper::Base
+class Tag < ActiveRecord::Base
   property :name, :string
   
   validates_uniqueness_of :name
